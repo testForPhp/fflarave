@@ -49,11 +49,11 @@
 @include('home.layouts.js')
 <script>
         function check(form) {
-            // errorMsg = checkForm(form)
-            // if(errorMsg != ''){
-            //     errorHtmlMsg(errorMsg);
-            //     return false;
-            // }
+            errorMsg = checkForm(form)
+            if(errorMsg != ''){
+                errorHtmlMsg(errorMsg);
+                return false;
+            }
             return true;
         }
 
