@@ -97,7 +97,7 @@
         <div class="card-content card-content-padding">
             <p>複製下面網址進行推廣，你的推廣鏈接每被訪問一次將給您增加'1點'，24小時內多次訪問只計一次。每天點數增加的上限為40點！</p>
             <div style="width: 100%;border: 2px #007aff dashed;border-radius: 5px;padding: 9px 2px;">
-                    {{ env('SPREAD_URL') }}/spread?token={{ Hashids::encode(Auth::id()) }}
+                <a href="{{ env('SPREAD_URL') }}/spread?token={{ Hashids::encode(Auth::id()) }}" class="link">{{ env('SPREAD_URL') }}/spread?token={{ Hashids::encode(Auth::id()) }}</a>
             </div>
 
         </div>
