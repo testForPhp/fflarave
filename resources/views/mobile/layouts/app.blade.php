@@ -111,5 +111,6 @@
 <script src="https://cdn.jsdelivr.net/npm/framework7@3.4.2/js/framework7.min.js" integrity="sha256-gHaD2KoH9eWXATHYXr47H2veWtzzDVV6jKi/WOL56P4=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/mobile/public.js?v0.16764564567"></script>
 @yield('script')
+@if(isset(cache('system_base')->count)){!!  cache('system_base')->count !!}@endif
 </body>
 </html>
