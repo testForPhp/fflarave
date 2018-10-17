@@ -1,0 +1,65 @@
+a{
+    text-decoration:none;
+    out-line: none;
+    color: #343a40;
+}
+a:hover{
+    text-decoration:none;
+}
+.content-height{
+    min-height:670px;
+}
+.host .card{
+    height: 180px;
+}
+.host .card-top{
+    margin-top: 120px;
+}
+.card .card-img .badge{
+    top:60%;
+    right:7px;
+}
+.tage table td{
+    font-size:18px;
+}
+.card .card-img .badge.video-pixel {
+    top: 7px !important;
+}
+.card-img-top {
+    height: 178px;
+}
+body.reg{
+    min-height: 650px;
+    position: relative;
+    height:100vh;
+    background:url('/images/bg2.jpg') center no-repeat fixed;
+    background-size: cover;
+}
+
+.tage table td{
+    font-size:18px;
+}
+.message ul li{
+    cursor:pointer;
+}
+.pointer{
+    cursor: pointer;
+}
+.user-info tbody tr th{
+    width: 15%;
+    text-align: right;
+}
+.video-js{
+    width: 100%;
+}
+.tool-share span{
+    cursor:pointer;
+}
+.collect .card .badge-danger {
+    width: 25px;
+    position: absolute;
+    right: -9px;
+    top: -8px;
+}
+
+
