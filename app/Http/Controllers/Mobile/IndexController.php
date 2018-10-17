@@ -28,7 +28,7 @@ class IndexController extends Controller
     public function islogin()
     {
         if(Auth::check()){
-            return redirect('/mobile/member.index');
+            return redirect('/mobile/member/index');
         }
         return redirect('/mobile/login');
     }
