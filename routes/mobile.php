@@ -6,6 +6,7 @@ Route::group(['prefix'=>'mobile','namespace'=>'Mobile'],function (){
     Route::get('/host','IndexController@newVideo');
     Route::get('/list/{token}','IndexController@listVideo')->where('token','[0-9A-Za-z]+');
 
+    Route::get('/islogin','IndexController@islogin');
 
     Route::get('/register','Auth\RegisterController@index');
     Route::post('/register','Auth\RegisterController@register');

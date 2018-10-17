@@ -6,6 +6,7 @@ use App\Repositories\SortRepository;
 use App\Repositories\VideoRepository;
 use App\Transformers\VideoTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Vinkla\Hashids\Facades\Hashids;
 
 class IndexController extends Controller
@@ -24,6 +25,14 @@ class IndexController extends Controller
         return view('mobile.index.index',compact(['banner','imgServer']));
     }
 
+    public function islogin()
+    {
+        if(Auth::check()){
+            return redirect('/mobile/member.index');
+        }
+        return redirect('/mobile/login');
+    }
+    
     public function listVideo(Request $request, $token)
     {
 
