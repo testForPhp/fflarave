@@ -33,6 +33,8 @@
             let jumpprefix = document.location.toString().split('//')[1].split('/')[1];
             if(jumpprefix == 'login'){
                 window.location.href = '/mobile/login';
+            }else if(jumpprefix == 'member'){
+                window.location.href = '/mobile/member/';
             }else{
                 window.location.href = '/mobile/index';
             }
