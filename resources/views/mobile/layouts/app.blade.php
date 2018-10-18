@@ -89,7 +89,7 @@
                     <i class="f7-icons size-50 ">film_fill</i>
                     <span class="tabbar-label">視頻</span>
                 </a>
-                <a href="/mobile/member/index" class="tab-link text-color-white external">
+                <a href="/mobile/member/" class="tab-link text-color-white external">
                     <i class="f7-icons size-50">person_fill</i>
                     <span class="tabbar-label">個人</span>
                 </a>

@@ -24,7 +24,7 @@ class IndexController extends Controller
         $imgServer = $this->imgServer();
         return view('mobile.index.index',compact(['banner','imgServer']));
     }
-    
+
     
     public function listVideo(Request $request, $token)
     {

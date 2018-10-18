@@ -19,7 +19,7 @@ Route::group(['prefix'=>'mobile','namespace'=>'Mobile'],function (){
 
     Route::group(['middleware'=>'auth','prefix'=>'member'],function (){
 
-        Route::get('/index','MemberController@index');
+        Route::get('/','MemberController@index');
 
         Route::get('/userinfo','UserController@info');
         Route::get('/notice','UserController@notice');

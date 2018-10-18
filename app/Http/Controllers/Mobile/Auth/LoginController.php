@@ -25,7 +25,7 @@ class LoginController extends Controller
         $password = $request->get('password');
 
         if(Auth::attempt(['email' => $email,'password' => $password])){
-            return $this->msgJson(0,'登陸成功！',200,['url'=>'/mobile/member/index']);
+            return $this->msgJson(0,'登陸成功！',200,['url'=>'/mobile/member/']);
         }
         return $this->msgJson(400,'郵箱或密碼錯誤！',400);
     }
