@@ -24,14 +24,7 @@ class IndexController extends Controller
         $imgServer = $this->imgServer();
         return view('mobile.index.index',compact(['banner','imgServer']));
     }
-
-    public function islogin()
-    {
-        if(Auth::check()){
-            return redirect('/mobile/member/index');
-        }
-        return redirect('/mobile/login');
-    }
+    
     
     public function listVideo(Request $request, $token)
     {

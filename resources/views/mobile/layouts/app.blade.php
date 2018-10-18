@@ -60,7 +60,9 @@
                         </a>
                     @endif
                 </div>
-                <div class="center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">@if(isset($webname)){{ $webname }} @else @if(isset(cache('system_base')->website)){{ cache('system_base')->website }} @else JapanXav @endif @endif</div>
+                <div class="center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                    @if(isset($webname)){{ $webname }} @else @if(isset(cache('system_base')->website)){{ cache('system_base')->website }} @else JapanXav @endif @endif
+                </div>
                 <div class="right">
 
                 </div>
@@ -79,7 +81,7 @@
         <!-- Bottom Toolbar-->
         <div class="toolbar tabbar tabbar-labels bg-color-blue">
             <div class="toolbar-inner">
-                <a href="/mobile/index" class="tab-link active text-color-white external">
+                <a href="/mobile/index" class="tab-link text-color-white external">
                     <i class="f7-icons size-50">home_fill</i>
                     <span class="tabbar-label">首頁</span>
                 </a>
@@ -87,7 +89,7 @@
                     <i class="f7-icons size-50 ">film_fill</i>
                     <span class="tabbar-label">視頻</span>
                 </a>
-                <a href="/mobile/islogin" class="tab-link text-color-white external">
+                <a href="/mobile/member/index" class="tab-link text-color-white external">
                     <i class="f7-icons size-50">person_fill</i>
                     <span class="tabbar-label">個人</span>
                 </a>

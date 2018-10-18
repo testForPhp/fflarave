@@ -10,6 +10,7 @@
     <title>@if(isset(cache('system_base')->website)){{ cache('system_base')->website }}@endif</title>
     <link rel="stylesheet" href="/css/style.css?v.0.0974234912">
     <script>
+        console.log(document.location.toString().split('//')[1].split('/')[1]);
         @if(!isset($resetpassword))
         function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();
@@ -29,7 +30,13 @@
         }
 
         if(browserRedirect() == true){
-            window.location.href = '/mobile/index';
+            let jumpprefix = document.location.toString().split('//')[1].split('/')[1];
+            if(jumpprefix == 'login'){
+                window.location.href = '/mobile/login';
+            }else{
+                window.location.href = '/mobile/index';
+            }
+
         }
         @endif
     </script>

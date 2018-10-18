@@ -37,7 +37,6 @@
     </div>
     <div class="row video video-new">
         <!-- video -->
-
     </div>
 @stop
 @section('script')
