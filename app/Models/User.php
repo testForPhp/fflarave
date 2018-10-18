@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function collect()
     {
-        return $this->hasManyThrough('App\Models\Video','App\Models\collect','user_id','id','id','video_id');
+        return $this->hasManyThrough('App\Models\Video','App\Models\Collect','user_id','id','id','video_id');
     }
 
     public function sendPasswordResetNotification($token)
