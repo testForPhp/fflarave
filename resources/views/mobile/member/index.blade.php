@@ -15,7 +15,7 @@
                 <li>
                     <div class="item-content bg-color-blue padding-top-10-px padding-bottom-10-px text-color-white">
                         <div class="item-media">
-                            <img src="https://b-ssl.duitang.com/uploads/item/201603/14/20160314183826_XtNYf.thumb.700_0.jpeg" width="44"/></div>
+                            <img src="http://image001.ytexpress.cn/20170708/874d75f115f6aa651a9a451e57f95628.jpg" width="44"/></div>
                         <div class="item-inner">
                             <div class="item-title-row">
                                 <div class="item-title">{{ Auth::user()->name }}</div>
@@ -96,7 +96,7 @@
         <div class="card-header text-color-blue"><span class="f7-icons diy-size-20">world_fill推廣應用</span></div>
         <div class="card-content card-content-padding">
             <p>複製下面網址進行推廣，你的推廣鏈接每被訪問一次將給您增加'1點'，24小時內多次訪問只計一次。每天點數增加的上限為40點！</p>
-            <div style="width: 100%;border: 2px #007aff dashed;border-radius: 5px;padding: 9px 2px;">
+            <div style="width: 100%;border: 2px #007aff dashed;border-radius: 5px;padding: 9px 3px;font-size: 12px;" class="speard-link">
                 {{ env('SPREAD_URL') }}/spread?token={{ Hashids::encode(Auth::id()) }}
             </div>
 
@@ -137,6 +137,11 @@
             }
         });
 
+        $$('.speard-link').on('click',function () {
+            let spreadLink = $$(this).text();
+            Clipboard.copy(spreadLink);
+        });
+
         $$('.notice-list li').on('click',function () {
             myApp.preloader.show();
             let token = $$(this).data('token');
@@ -150,5 +155,62 @@
                 myApp.dialog.alert(errorJsonToText( JSON.parse(xhr.response)));
             },'json');
         });
+
+        window.Clipboard = (function(window, document, navigator) {
+            var textArea,
+                copy;
+
+            // 判断是不是ios端
+            function isOS() {
+                return navigator.userAgent.match(/ipad|iphone/i);
+            }
+            //创建文本元素
+            function createTextArea(text) {
+                textArea = document.createElement('textArea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+            }
+            //选择内容
+            function selectText() {
+                var range,
+                    selection;
+
+                if (isOS()) {
+                    range = document.createRange();
+                    range.selectNodeContents(textArea);
+                    selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    textArea.setSelectionRange(0, 999999);
+                } else {
+                    textArea.select();
+                }
+            }
+
+//复制到剪贴板
+            function copyToClipboard() {
+                try{
+                    if(document.execCommand("Copy")){
+                        alert("复制成功！");
+                    }else{
+                        alert("复制失败！请手动复制！");
+                    }
+                }catch(err){
+                    alert("复制错误！请手动复制！")
+                }
+                document.body.removeChild(textArea);
+            }
+
+            copy = function(text) {
+                createTextArea(text);
+                selectText();
+                copyToClipboard();
+            };
+
+            return {
+                copy: copy
+            };
+        })(window, document, navigator);
+
     </script>
 @stop
